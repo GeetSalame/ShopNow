@@ -20,7 +20,7 @@
   <!-- contaier-fluid class takes width 100% -->
   <div class="container-fluid p-0">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" id="logoname"><span>Shop</span><span>Now</span></a>
         <!-- below is the menu button for smaller screens -->
@@ -46,10 +46,146 @@
       </div>
     </nav>
 
+
+    <!-- welcome section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a href="#" class="nav-link text-light">Welcome Guest</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light">Login</a></li>
+      </ul>
+    </nav>
+
+    <!-- main container -->
+    <div class="row">
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-4 mb-5">
+            <div class="card">
+              <img
+                src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-vector-illustration-of-fresh-red-apple-with-single-leaf-png-image_3714100.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card">
+              <img
+                src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-vector-illustration-of-fresh-red-apple-with-single-leaf-png-image_3714100.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card">
+              <img
+                src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-vector-illustration-of-fresh-red-apple-with-single-leaf-png-image_3714100.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card">
+              <img
+                src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-vector-illustration-of-fresh-red-apple-with-single-leaf-png-image_3714100.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card">
+              <img
+                src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-vector-illustration-of-fresh-red-apple-with-single-leaf-png-image_3714100.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card">
+              <img
+                src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-vector-illustration-of-fresh-red-apple-with-single-leaf-png-image_3714100.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card">
+              <img
+                src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-vector-illustration-of-fresh-red-apple-with-single-leaf-png-image_3714100.jpg"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right nav -->
+      <div class="col-md-2 bg-light p-0">
+        <!-- brands -->
+        <ul class="navbar-nav me-auto text-center">
+          <li class="nav-item bg-primary"><a href="#" class="nav-link text-light"><h5>Delivery Brands</h5></a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Delivery Brand1</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Delivery Brand2</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Delivery Brand3</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Delivery Brand4</a></li>
+        </ul>
+        
+        <!-- brands -->
+        <ul class="navbar-nav me-auto text-center">
+          <li class="nav-item bg-primary"><a href="#" class="nav-link text-light"><h5>Categories</h5></a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Category 1</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Category 2</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Category 3</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Category 4</a></li>
+        </ul>
+      </div>
+    </div>
+
     <!-- Footer -->
-    <!-- <footer class="bg-light p-3 text-center">
-      <p>All rights are reserved</p>
-    </footer> -->
+    <footer class="bg-light p-3 text-center">
+      <p>All rights are reserved &copy;2024 ShopNow</p>
+    </footer>
   </div>
 
   <!-- Bootstrap js -->
