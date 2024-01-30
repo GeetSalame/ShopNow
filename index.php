@@ -16,6 +16,11 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
+<!-- DB -->
+<?php
+include("./includes/connectDB.php");
+?>
+
 <body>
   <!-- contaier-fluid class takes width 100% -->
   <div class="container-fluid p-0">
@@ -57,6 +62,7 @@
 
     <!-- main container -->
     <div class="row">
+      <!-- main body -->
       <div class="col-md-10">
         <div class="row">
           <div class="col-md-4 mb-5">
@@ -164,20 +170,40 @@
       <div class="col-md-2 bg-light p-0">
         <!-- brands -->
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item bg-primary"><a href="#" class="nav-link text-light"><h5>Delivery Brands</h5></a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Delivery Brand1</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Delivery Brand2</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Delivery Brand3</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Delivery Brand4</a></li>
+          <li class="nav-item bg-primary"><a href="#" class="nav-link text-light">
+              <h5>Delivery Brands</h5>
+            </a></li>
+          <!-- fetching all brands listed in DB -->
+          <?php
+          $select_brand_query = "select * from `brands`";
+          $result_select_brand = mysqli_query($conn, $select_brand_query);
+
+          // iterating through fetched brands
+          while ($row_select_brand = mysqli_fetch_assoc($result_select_brand)) {
+            $select_brand_id = $row_select_brand["brand_id"];
+            $select_brand_name = $row_select_brand["brand_name"];
+            echo "<li class=\"nav-item\"><a href=\"index.php?brand_id=$select_brand_id\" class=\"nav-link text-dark\">$select_brand_name</a></li>";
+          }
+          ?>
         </ul>
-        
-        <!-- brands -->
+
+        <!-- categories -->
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item bg-primary"><a href="#" class="nav-link text-light"><h5>Categories</h5></a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Category 1</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Category 2</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Category 3</a></li>
-          <li class="nav-item"><a href="#" class="nav-link text-dark">Category 4</a></li>
+          <li class="nav-item bg-primary"><a href="#" class="nav-link text-light">
+              <h5>Categories</h5>
+            </a></li>
+          <?php
+          // fetching all the categories listed in DB
+          $select_catg_query = "select * from `categories`";
+          $result_select_catg = mysqli_query($conn, $select_catg_query);
+
+          // iterating through all the fetched categories
+          while ($row_select_catg = mysqli_fetch_assoc($result_select_catg)) {
+            $select_catg_id = $row_select_catg["catg_id"];
+            $select_catg_name = $row_select_catg["catg_name"];
+            echo "<li class=\"nav-item\"><a href=\"index.php?catg_id=$select_catg_id\" class=\"nav-link text-dark\">$select_catg_name</a></li>";
+          }
+          ?>
         </ul>
       </div>
     </div>

@@ -26,13 +26,14 @@ if (isset($_POST['insert_catg'])) {
 
 <!-- form to post new category into DB -->
 <form action="" method="post" class="mb-2">
-    <div class="input-group mb-3 w-90">
+    <h2 class="text-center">Add new Category</h2>
+    <div class="input-group m-3 w-90">
         <span class="input-group-text bg-primary" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>
-        <input type="text" class="form-control" name="catg_name" placeholder="Insert Categories"
+        <input type="text" class="form-control" name="catg_name" placeholder="Add Category"
             aria-describedby="basic-addon1" autofocus>
     </div>
 
-    <div class="input-group mb-3 w-90">
+    <div class="input-group w-90">
         <input type="submit" class="btn-primary my-2 px-3 py-1 mx-auto" name="insert_catg" value="Insert Categories"
             aria-describedby="basic-addon1">
     </div>
