@@ -16,11 +16,16 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
+<!-- DB -->
+<?php
+include("./includes/connectDB.php");
+?>
+
 <body>
   <!-- contaier-fluid class takes width 100% -->
   <div class="container-fluid p-0">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" id="logoname"><span>Shop</span><span>Now</span></a>
         <!-- below is the menu button for smaller screens -->
@@ -46,10 +51,90 @@
       </div>
     </nav>
 
+
+    <!-- welcome section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a href="#" class="nav-link text-light">Welcome Guest</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light">Login</a></li>
+      </ul>
+    </nav>
+
+    <!-- main container -->
+    <div class="row">
+      <!-- main body -->
+      <div class="col-md-10">
+        <div class="row">
+          <?php
+          $select_query = "select * from `products`";
+          $select_result = mysqli_query($conn, $select_query);
+          while ($row = mysqli_fetch_array($select_result)) {
+            $productName = $row['product_name'];
+            $productDesc = $row['description'];
+            $productImg1 = $row['img1'];
+            echo"<div class=\"col-md-4 mb-5\">
+              <div class=\"card\">
+                <img
+                  src=\"./admin/product_images/$productImg1\" alt=\"$productName\">
+                <div class=\"card-body\">
+                  <h5 class=\"card-title\">$productName</h5>
+                  <p class=\"card-text\">$productDesc</p>
+                  <a href=\"#\" class=\"btn btn-primary\">Add to Cart</a>
+                  <a href=\"#\" class=\"btn btn-secondary\">View More</a>
+                </div>
+              </div>
+            </div>";
+          }
+          ?>
+        </div>
+      </div>
+
+      <!-- right nav -->
+      <div class="col-md-2 bg-light p-0">
+        <!-- brands -->
+        <ul class="navbar-nav me-auto text-center">
+          <li class="nav-item bg-primary"><a href="#" class="nav-link text-light">
+              <h5>Delivery Brands</h5>
+            </a></li>
+          <!-- fetching all brands listed in DB -->
+          <?php
+          $select_brand_query = "select * from `brands`";
+          $result_select_brand = mysqli_query($conn, $select_brand_query);
+
+          // iterating through fetched brands
+          while ($row_select_brand = mysqli_fetch_assoc($result_select_brand)) {
+            $select_brand_id = $row_select_brand["brand_id"];
+            $select_brand_name = $row_select_brand["brand_name"];
+            echo "<li class=\"nav-item\"><a href=\"index.php?brand_id=$select_brand_id\" class=\"nav-link text-dark\">$select_brand_name</a></li>";
+          }
+          ?>
+        </ul>
+
+        <!-- categories -->
+        <ul class="navbar-nav me-auto text-center">
+          <li class="nav-item bg-primary"><a href="#" class="nav-link text-light">
+              <h5>Categories</h5>
+            </a></li>
+          <?php
+          // fetching all the categories listed in DB
+          $select_catg_query = "select * from `categories`";
+          $result_select_catg = mysqli_query($conn, $select_catg_query);
+
+          // iterating through all the fetched categories
+          while ($row_select_catg = mysqli_fetch_assoc($result_select_catg)) {
+            $select_catg_id = $row_select_catg["catg_id"];
+            $select_catg_name = $row_select_catg["catg_name"];
+            echo "<li class=\"nav-item\"><a href=\"index.php?catg_id=$select_catg_id\" class=\"nav-link text-dark\">$select_catg_name</a></li>";
+          }
+          ?>
+        </ul>
+      </div>
+    </div>
+
     <!-- Footer -->
-    <!-- <footer class="bg-light p-3 text-center">
-      <p>All rights are reserved</p>
-    </footer> -->
+    <footer class="bg-light p-3 text-center">
+      <p>All rights are reserved &copy;2024 ShopNow</p>
+    </footer>
   </div>
 
   <!-- Bootstrap js -->
