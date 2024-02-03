@@ -5,7 +5,7 @@ function getProducts()
 {
     global $conn;
 
-    if (!isset($_GET["catg_id"]) and !isset($_GET["brand_id"])) {
+    if (!isset($_GET["catg_id"]) and !isset($_GET["brand_id"]) and !isset($_GET["searchedTerm"])) {
         $select_query = "select * from `products`";
     } else if (isset($_GET["catg_id"])) {
         $catgId = $_GET["catg_id"];
@@ -13,6 +13,9 @@ function getProducts()
     } else if (isset($_GET["brand_id"])) {
         $brandId = $_GET["brand_id"];
         $select_query = "select * from `products` where brand_id=$brandId";
+    } else if (isset($_GET["searchedTerm"])) {
+        $searchedTerm = $_GET["searchedTerm"];
+        $select_query = "select * from `products` where product_name like '%$searchedTerm%' or description like '%$searchedTerm%' or keywords like '%$searchedTerm%'";
     }
 
     $select_result = mysqli_query($conn, $select_query);
@@ -36,7 +39,7 @@ function getProducts()
         </div>";
         }
     } else {
-        echo "<h4 style=\"color:red;text-align:center;margin-top:10px\">No Stocks found!!</h4>";
+        echo "<h4 style=\"color:red;text-align:center;margin-top:10px\">No related stocks found!!</h4>";
     }
 }
 
@@ -66,6 +69,13 @@ function getCatgs()
         $select_catg_name = $row_select_catg["catg_name"];
         echo "<li class=\"nav-item\"><a href=\"index.php?catg_id=$select_catg_id\" class=\"nav-link text-dark\">$select_catg_name</a></li>";
     }
+}
+
+function searchQuery()
+{
+    global $conn;
+    $searchQuery = $_POST["searchedTerm"];
+    // echo $searchQuery;
 }
 
 ?>
