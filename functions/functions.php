@@ -4,13 +4,25 @@ include("./includes/connectDB.php");
 function getProducts()
 {
     global $conn;
-    $select_query = "select * from `products`";
+
+    if (!isset($_GET["catg_id"]) and !isset($_GET["brand_id"])) {
+        $select_query = "select * from `products`";
+    } else if (isset($_GET["catg_id"])) {
+        $catgId = $_GET["catg_id"];
+        $select_query = "select * from `products` where catg_id=$catgId";
+    } else if (isset($_GET["brand_id"])) {
+        $brandId = $_GET["brand_id"];
+        $select_query = "select * from `products` where brand_id=$brandId";
+    }
+
     $select_result = mysqli_query($conn, $select_query);
-    while ($row = mysqli_fetch_array($select_result)) {
-        $productName = $row['product_name'];
-        $productDesc = $row['description'];
-        $productImg1 = $row['img1'];
-        echo "<div class=\"col-md-4 mb-5\">
+    $result_size = mysqli_num_rows($select_result);
+    if ($result_size > 0) {
+        while ($row = mysqli_fetch_array($select_result)) {
+            $productName = $row['product_name'];
+            $productDesc = $row['description'];
+            $productImg1 = $row['img1'];
+            echo "<div class=\"col-md-4 mb-5\">
         <div class=\"card\">
         <img
         src=\"./admin/product_images/$productImg1\" alt=\"$productName\">
@@ -22,6 +34,9 @@ function getProducts()
         </div>
         </div>
         </div>";
+        }
+    } else {
+        echo "<h4 style=\"color:red;text-align:center;margin-top:10px\">No Stocks found!!</h4>";
     }
 }
 
