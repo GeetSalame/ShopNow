@@ -22,11 +22,11 @@ include("./includes/connectDB.php");
 include("./functions/functions.php");
 ?>
 
-<body>
+<body id="bootstrap-overrides">
   <!-- contaier-fluid class takes width 100% -->
   <div class="container-fluid p-0">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3" style="position:fixed; z-index:100; width:100%">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" id="logoname"><span>Shop</span><span>Now</span></a>
         <!-- below is the menu button for smaller screens -->
@@ -37,7 +37,7 @@ include("./functions/functions.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php">Product</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>15</sup></a>
@@ -63,10 +63,10 @@ include("./functions/functions.php");
     </nav>
 
     <!-- main container -->
-    <div class="row">
+    <div class="row row1">
       <!-- main body -->
       <div class="col-md-10">
-        <div class="row">
+        <div class="row" style="display:flex; flex-direction:row; gap:0 50px; justify-content:center; padding:20px 0">
           <?php
           getProducts();
           ?>
@@ -74,7 +74,7 @@ include("./functions/functions.php");
       </div>
 
       <!-- right nav -->
-      <div class="col-md-2 bg-light p-0">
+      <div class="col-md-2 bg-light p-0" style="position:fixed; right:0">
         <!-- brands -->
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-primary"><a href="#" class="nav-link text-light">

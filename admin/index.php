@@ -42,7 +42,7 @@
                     <p class="text-light text-center">Admin Name</p>
                 </div>
                 <div class="button text-center p-5">
-                    <button class="m-1"><a href="" class="nav-link text-light bg-primary">View Products</a></button>
+                    <button class="m-1"><a href="../index.php" class="nav-link text-light bg-primary">View Products</a></button>
                     <button class="m-1"><a href="insert_product.php" class="nav-link text-light bg-primary">Insert Products</a></button>
                     <button class="m-1"><a href="" class="nav-link text-light bg-primary">View Categories</a></button>
                     <button class="m-1"><a href="index.php?insert_catg" class="nav-link text-light bg-primary">Insert Categories</a></button>
